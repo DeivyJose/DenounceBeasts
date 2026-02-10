@@ -16,7 +16,6 @@ namespace DenounceBeastsApi.Controllers
             _context = context;
         }
 
-        // GET: api/Sectors
         [HttpGet]
         public async Task<ActionResult<IEnumerable<SectorReadDto>>> GetSectors()
         {
@@ -29,7 +28,6 @@ namespace DenounceBeastsApi.Controllers
                 .ToListAsync();
         }
 
-        // GET: api/Sectors/5
         [HttpGet("{id}")]
         public async Task<ActionResult<SectorReadDto>> GetSector(int id)
         {
@@ -45,7 +43,6 @@ namespace DenounceBeastsApi.Controllers
             };
         }
 
-        // POST: api/Sectors
         [HttpPost]
         public async Task<ActionResult> PostSector(SectorCreateDto dto)
         {
@@ -60,7 +57,6 @@ namespace DenounceBeastsApi.Controllers
             return Ok(sector);
         }
 
-        // PUT: api/Sectors/5
         [HttpPut("{id}")]
         public async Task<IActionResult> PutSector(int id, SectorCreateDto dto)
         {
@@ -75,7 +71,6 @@ namespace DenounceBeastsApi.Controllers
             return NoContent();
         }
 
-        // DELETE: api/Sectors/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteSector(int id)
         {

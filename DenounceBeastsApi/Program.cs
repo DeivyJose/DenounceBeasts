@@ -3,7 +3,6 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// ===== Servicios =====
 builder.Services.AddControllers();
 
 builder.Services.AddDbContext<DenounceBeastsDbContext>(options =>
@@ -14,7 +13,6 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// ===== Middleware =====
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -25,7 +23,6 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
-// 👇 ESTA LÍNEA ES LA MÁS IMPORTANTE
 app.MapControllers();
 
 app.Run();

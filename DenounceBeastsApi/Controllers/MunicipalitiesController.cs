@@ -16,7 +16,6 @@ namespace DenounceBeastsApi.Controllers
             _context = context;
         }
 
-        // GET
         [HttpGet]
         public async Task<ActionResult<IEnumerable<MunicipalityReadDto>>> GetMunicipalities()
         {
@@ -30,7 +29,6 @@ namespace DenounceBeastsApi.Controllers
                 .ToListAsync();
         }
 
-        // GET by id
         [HttpGet("{id}")]
         public async Task<ActionResult<MunicipalityReadDto>> GetMunicipality(int id)
         {
@@ -47,7 +45,6 @@ namespace DenounceBeastsApi.Controllers
             };
         }
 
-        // POST
         [HttpPost]
         public async Task<IActionResult> PostMunicipality(MunicipalityCreateDto dto)
         {
@@ -63,7 +60,6 @@ namespace DenounceBeastsApi.Controllers
             return Ok(municipality);
         }
 
-        // PUT
         [HttpPut("{id}")]
         public async Task<IActionResult> PutMunicipality(int id, MunicipalityCreateDto dto)
         {
@@ -79,8 +75,6 @@ namespace DenounceBeastsApi.Controllers
 
             return NoContent();
         }
-
-        // DELETE
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteMunicipality(int id)
         {
